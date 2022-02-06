@@ -1,27 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# https://discuss.elastic.co/t/topic/228160/5
-
-# pip3 install googletrans==4.0.0-rc1
-# git clone https://github.com/elastic/kibana.git
-# cd kibana 
-# git checkout v6.8.20
-# git branch
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-# source ~/.zshrc
-# nvm use
-# nvm install 10.24.1
-# yarn npm install -g yarn
-# yarn kbn bootstrap
-
-# node ./scripts/i18n_extract.js --output-dir ./
-# node scripts/i18n_integrate.js --source en.json --target en_integreted.json
-# cp  ru-RU.json /usr/share/kibana/node_modules/x-pack/plugins/translations/translations/zh-CN.json
-# tee -a /etc/kibana/kibana.yml <<< 'i18n.locale: "zh-CN"'
-# systemctl restart kibana.service
-# or debug to console run /usr/share/kibana/bin/kibana "-c /etc/kibana/kibana.yml"
-
 import re, json, os, time
 from googletrans import Translator
 
@@ -135,7 +114,7 @@ for key in en_json_file["messages"]:
         # translate
         eng_string = en_json_file["messages"][key]
         ru_string = replace_and_translate(eng_string)
-        
+
         # replace sentences in original dict
         en_json_file["messages"][key] = ru_string
 
