@@ -15,6 +15,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 source ~/.zshrc
 nvm use
 nvm install 10.24.1
+npm install --global yarn
 yarn npm install -g yarn
 yarn kbn bootstrap
 ```
